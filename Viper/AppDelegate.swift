@@ -12,10 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    // MARK: Application Delegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.setupRootViewController()
         return true
     }
 
@@ -41,6 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // MARK: Private Methods
+    func setupRootViewController() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.backgroundColor = UIColor.white;
+        self.window!.rootViewController = ViewController()
+        self.window!.makeKeyAndVisible()
+    }
 }
 
