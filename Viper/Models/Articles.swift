@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class Article: Mappable {
+class Article: Mappable {
     var title: String?
     var website: String?
     var authors: String?
@@ -17,10 +17,10 @@ public class Article: Mappable {
     var imageUrl: String?
     var date: Date?
     
-    public required init?(map: Map) {
+    required init?(map: Map) {
     }
     
-    public func mapping(map: Map) {
+    func mapping(map: Map) {
         title       <- map["title"]
         website     <- map["website"]
         authors     <- map["authors"]
