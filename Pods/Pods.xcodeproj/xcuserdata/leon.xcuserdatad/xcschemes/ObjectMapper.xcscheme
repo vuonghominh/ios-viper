@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9009AD1DF67FC0697F9D772F4FA53536"
-               BlueprintName = "Pods-Viper"
+               BlueprintIdentifier = "DB7C12C23926067EA60798AB08DC81ED"
+               BlueprintName = "ObjectMapper"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-Viper.a">
+               BuildableName = "libObjectMapper.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

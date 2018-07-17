@@ -7,4 +7,5 @@ target 'Viper' do
 
   # Pods for Viper
   pod 'SnapKit', '~> 4.0.0'
+  pod 'ObjectMapper', '~> 3.3.0'
 end
