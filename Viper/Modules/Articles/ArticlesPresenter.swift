@@ -10,6 +10,7 @@ import Foundation
 
 class ArticlesPresenter: ArticlesOutput {
     weak var provider: ArticlesProvider!
+    weak var view: ArticlesViewInterface!
     
     init() {
         let articlesInteractor = ArticlesInteractor()
@@ -18,12 +19,11 @@ class ArticlesPresenter: ArticlesOutput {
     }
     
     func receiveArticles(articles: [Article]) {
-        print(articles[0].title!)
-        print(articles[0].authors!)
-        print(articles[0].content!)
-        print(articles[0].date!)
-        print(articles[0].imageUrl!)
-        print(articles[0].website!)
+        if articles.count > 0 {
+            view.showArticlesList()
+        } else {
+            view.showNoContentScreen()
+        }
     }
     
     func requestArticles() {

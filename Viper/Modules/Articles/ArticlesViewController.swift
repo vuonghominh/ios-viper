@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticlesViewController : UIViewController {
+class ArticlesViewController : UIViewController, ArticlesViewInterface {
     var articlesView: ArticlesView!
     var articlesPresenter: ArticlesPresenter!
     
@@ -19,5 +19,13 @@ class ArticlesViewController : UIViewController {
         self.view.addSubview(self.articlesView)
         
         self.articlesPresenter.requestArticles()
+    }
+    
+    func showNoContentScreen() {
+        <#code#>
+    }
+    
+    func showArticlesList() {
+        <#code#>
     }
 }
