@@ -44,9 +44,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Private Methods
     func setupRootViewController() {
+        let articlesViewController = ArticlesViewController()
+        let articlesPresenter = ArticlesPresenter()
+        let articlesInteractor = ArticlesInteractor()
+        
+        articlesViewController.articlesPresenter = articlesPresenter
+        articlesPresenter.provider = articlesInteractor
+        articlesInteractor.output = articlesPresenter
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.backgroundColor = UIColor.white;
-        self.window!.rootViewController = ArticlesViewController()
+        self.window!.rootViewController = articlesViewController
         self.window!.makeKeyAndVisible()
     }
 }

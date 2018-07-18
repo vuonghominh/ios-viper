@@ -30,3 +30,13 @@ class Article: Mappable {
     }
 }
 
+class ArticlesResponse: Mappable {
+    var articles: [Article]?
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        articles <- map["data"]
+    }
+}
