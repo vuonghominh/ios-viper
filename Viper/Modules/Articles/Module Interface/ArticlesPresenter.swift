@@ -12,17 +12,11 @@ class ArticlesPresenter: ArticlesOutput {
     weak var provider: ArticlesProvider!
     weak var view: ArticlesViewInterface!
     
-    init() {
-        let articlesInteractor = ArticlesInteractor()
-        articlesInteractor.output = self
-        self.provider = articlesInteractor
-    }
-    
     func receiveArticles(articles: [Article]) {
         if articles.count > 0 {
-            view.showArticlesList()
+//            view.showArticlesList()
         } else {
-            view.showNoContentScreen()
+//            view.showNoContentScreen()
         }
     }
     

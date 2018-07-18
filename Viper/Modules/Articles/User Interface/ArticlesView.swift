@@ -9,6 +9,8 @@
 import UIKit
 
 class ArticlesView: UIView {
+    var articlesTableView: UITableView!
+    
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)

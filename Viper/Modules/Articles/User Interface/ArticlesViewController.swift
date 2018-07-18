@@ -22,10 +22,8 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface {
     }
     
     func showNoContentScreen() {
-        <#code#>
     }
     
     func showArticlesList() {
-        <#code#>
     }
 }
