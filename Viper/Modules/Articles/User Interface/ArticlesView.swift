@@ -30,8 +30,10 @@ class ArticlesView: UIView {
     
     func setupConstraints() {
         self.articlesTableView.snp.makeConstraints { (make) -> Void in
-            make.center.equalTo(self.snp.center)
-            make.size.equalTo(self.snp.size).inset(UIEdgeInsetsMake(30, 16, 16, 16))
+            make.top.equalTo(self.snp.top).offset(16)
+            make.bottom.equalTo(self.snp.bottom).offset(-16)
+            make.left.equalTo(self.snp.left).offset(16)
+            make.right.equalTo(self.snp.right).offset(-16)
         }
     }
     
@@ -40,8 +42,7 @@ class ArticlesView: UIView {
         let tableView = UITableView()
         tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: ArticleTableViewCell.kArticlesCellIdentifier)
         tableView.backgroundColor = UIColor.backgroundWhite()
-        tableView.estimatedRowHeight = 180.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 230.0
         tableView.showsVerticalScrollIndicator = false
         
         return tableView

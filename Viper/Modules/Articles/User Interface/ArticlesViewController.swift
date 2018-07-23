@@ -16,6 +16,7 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupArticlesView()
         self.articlesPresenter.requestArticles()
     }
     
@@ -26,7 +27,7 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     func showArticlesList(articles: [Article]) {
         self.articles = articles
-        self.setupArticlesView()
+        self.articlesView.articlesTableView.reloadData()
     }
     
     // MARK: Private
@@ -42,7 +43,7 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     // MARK: UITableView Datasource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.articles.count
+        return self.articles != nil ? self.articles.count : 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,9 +54,11 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     {
         let articleCell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.kArticlesCellIdentifier,
                                                         for: indexPath as IndexPath) as! ArticleTableViewCell
-        
-        articleCell.setupWithArticle(article: self.articles[indexPath.section])
-        articleCell.contentView.layoutIfNeeded()
+        if self.articles != nil {
+            articleCell.setupWithArticle(article: self.articles[indexPath.section])
+            
+            articleCell.contentView.layoutIfNeeded()
+        }
         
         return articleCell
     }
@@ -70,9 +73,9 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
     {
-        let spaceView = UIView()
-        spaceView.backgroundColor = UIColor.clear
-        return spaceView
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        return footerView
     }
     
     

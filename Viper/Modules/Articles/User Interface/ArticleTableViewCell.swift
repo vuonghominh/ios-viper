@@ -65,9 +65,8 @@ class ArticleTableViewCell : UITableViewCell {
     private func setupConstraints() {
         self.articleImageView.snp.makeConstraints {(make) -> Void in
             make.top.equalTo(self.contentView.snp.top)
-            make.centerX.equalTo(self.contentView.snp.centerX)
-            make.width.equalTo(self.contentView.snp.width)
-            make.height.equalTo(160)
+            make.left.equalTo(self.contentView.snp.left)
+            make.right.equalTo(self.contentView.snp.right)
         }
         
         self.titleLabel.snp.makeConstraints { (make) -> Void in
