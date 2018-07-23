@@ -9,8 +9,10 @@
 import Foundation
 
 class ArticlesPresenter: ArticlesOutput {
-    weak var provider: ArticlesProvider!
     weak var view: ArticlesViewInterface!
+    weak var wireframe: ArticlesWireframe!
+    
+    var provider: ArticlesProvider!
     
     func receiveArticles(articles: [Article]) {
         if articles.count > 0 {
