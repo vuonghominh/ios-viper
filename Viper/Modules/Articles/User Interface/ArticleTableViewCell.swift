@@ -12,7 +12,7 @@ import Kingfisher
 
 class ArticleTableViewCell : UITableViewCell {
     static let kArticlesCellIdentifier = "articlesCellIdentifier"
-    static let kImagePlaceHolder = "image-placeholder"
+    let kImagePlaceHolder = "image-placeholder"
     
     // MARK: Life Cycle
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -91,7 +91,7 @@ class ArticleTableViewCell : UITableViewCell {
         if (article.imageUrl != nil) {
             self.articleImageView.kf.setImage(with: URL(string: article.imageUrl!), placeholder: nil)
         } else {
-            self.articleImageView.image = UIImage(named: ArticleTableViewCell.kImagePlaceHolder)
+            self.articleImageView.image = UIImage(named: self.kImagePlaceHolder)
         }
     }
 }
