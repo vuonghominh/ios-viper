@@ -14,9 +14,9 @@ class ArticlesPresenter: ArticlesOutput {
     
     func receiveArticles(articles: [Article]) {
         if articles.count > 0 {
-//            view.showArticlesList()
+            view.showArticlesList(articles: articles)
         } else {
-//            view.showNoContentScreen()
+            view.showNoContentScreen()
         }
     }
     

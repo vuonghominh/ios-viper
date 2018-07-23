@@ -10,5 +10,5 @@ import Foundation
 
 protocol ArticlesViewInterface: class {
     func showNoContentScreen()
-    func showArticlesList()
+    func showArticlesList(articles: [Article])
 }

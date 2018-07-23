@@ -18,6 +18,9 @@
 		35E4CE8420FE41B8005181F2 /* ArticlesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */; };
 		35E4CE8620FF7C80005181F2 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */; };
 		35E4CE8C20FF89C0005181F2 /* ArticlesViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */; };
+		35E4CE9320FF8F79005181F2 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9220FF8F79005181F2 /* UIFont+Custom.swift */; };
+		35E4CE9520FF8FB0005181F2 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9420FF8FB0005181F2 /* UIColor+Custom.swift */; };
+		35E4CE9720FF90EC005181F2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9620FF90EC005181F2 /* ArticleTableViewCell.swift */; };
 		E51B18ED5AB599FFFB8D1A87 /* Pods_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6FFD0B8D311FE2896CD39D /* Pods_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractor.swift; sourceTree = "<group>"; };
 		35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
 		35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewInterface.swift; sourceTree = "<group>"; };
+		35E4CE9220FF8F79005181F2 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
+		35E4CE9420FF8FB0005181F2 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		35E4CE9620FF90EC005181F2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		6E6FFD0B8D311FE2896CD39D /* Pods_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		883D3DEF4A11A46DD4BD3AA9 /* Pods-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Viper/Pods-Viper.release.xcconfig"; sourceTree = "<group>"; };
 		8BD92C9CAD9EDF997D762A91 /* Pods-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Viper/Pods-Viper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 		35E4CE6120FCF3DE005181F2 /* Viper */ = {
 			isa = PBXGroup;
 			children = (
+				35E4CE9020FF8F4D005181F2 /* Utils */,
 				35E4CE7920FE3C32005181F2 /* Modules */,
 				35E4CE7620FE32ED005181F2 /* Models */,
 				35E4CE7520FE32D8005181F2 /* Resources */,
@@ -149,8 +156,26 @@
 				35E4CE7B20FE3C77005181F2 /* ArticlesViewController.swift */,
 				35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */,
 				35E4CE7D20FE3CDC005181F2 /* ArticlesView.swift */,
+				35E4CE9620FF90EC005181F2 /* ArticleTableViewCell.swift */,
 			);
 			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		35E4CE9020FF8F4D005181F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				35E4CE9120FF8F57005181F2 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		35E4CE9120FF8F57005181F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35E4CE9220FF8F79005181F2 /* UIFont+Custom.swift */,
+				35E4CE9420FF8FB0005181F2 /* UIColor+Custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E2EDF001B9BAF663F09C9CDD /* Frameworks */ = {
@@ -247,15 +272,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Viper/Pods-Viper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -290,6 +319,9 @@
 				35E4CE8420FE41B8005181F2 /* ArticlesInteractor.swift in Sources */,
 				35E4CE8620FF7C80005181F2 /* ArticlesPresenter.swift in Sources */,
 				35E4CE7C20FE3C77005181F2 /* ArticlesViewController.swift in Sources */,
+				35E4CE9520FF8FB0005181F2 /* UIColor+Custom.swift in Sources */,
+				35E4CE9720FF90EC005181F2 /* ArticleTableViewCell.swift in Sources */,
+				35E4CE9320FF8F79005181F2 /* UIFont+Custom.swift in Sources */,
 				35E4CE8C20FF89C0005181F2 /* ArticlesViewInterface.swift in Sources */,
 				35E4CE8220FE4133005181F2 /* ArticlesOutput.swift in Sources */,
 				35E4CE7E20FE3CDC005181F2 /* ArticlesView.swift in Sources */,
