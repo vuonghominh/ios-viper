@@ -103,6 +103,6 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print("Clicked on \(indexPath)")
+        self.articlesPresenter.presentDetailsScreenForArticle(article: self.articles[indexPath.row])
     }
 }

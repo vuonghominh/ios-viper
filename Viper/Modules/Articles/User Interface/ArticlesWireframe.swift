@@ -23,6 +23,7 @@ class ArticlesWireframe: NSObject {
     var articlesPresenter: ArticlesPresenter!
     var articlesViewController: ArticlesViewController!
     var rootWireframe: RootWireframe!
+    var detailsWireframe: DetailsWireframe!
     
     // MARK: Public
     
@@ -48,5 +49,10 @@ class ArticlesWireframe: NSObject {
         alert.addAction(UIAlertAction(title: self.cancelString.localized, style: .cancel, handler: nil))
         
         self.articlesViewController.present(alert, animated: true, completion: nil)
+    }
+    
+    func presentDetailsInterfaceForArticle(article: Article) {
+        self.detailsWireframe.article = article
+        self.detailsWireframe.presentDetailsInterfaceFromViewController(controller: self.articlesViewController)
     }
 }

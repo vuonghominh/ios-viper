@@ -60,4 +60,8 @@ class ArticlesPresenter: ArticlesOutput {
             break
         }
     }
+    
+    func presentDetailsScreenForArticle(article: Article) {
+        self.wireframe.presentDetailsInterfaceForArticle(article: article)
+    }
 }
