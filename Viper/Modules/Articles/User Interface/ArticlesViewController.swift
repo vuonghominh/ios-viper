@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableViewDataSource, UITableViewDelegate {
     // MARK: constants
@@ -21,8 +22,11 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupNavigationBar()
         self.setupArticlesView()
+        
+        HUD.show(.progress)
         self.articlesPresenter.requestArticles()
     }
     
@@ -53,13 +57,14 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     }
     
     func showArticlesList(articles: [Article]) {
+        HUD.hide()
         self.articles = articles
         self.articlesView.articlesTableView.reloadData()
     }
     
     // MARK: UITableView Datasource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.articles != nil ? self.articles.count : 0
     }
     

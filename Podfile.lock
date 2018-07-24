@@ -5,16 +5,18 @@ PODS:
     - ObjectMapper (~> 3.3)
   - Kingfisher (4.8.0)
   - ObjectMapper (3.3.0)
+  - PKHUD (5.1.0)
   - SnapKit (4.0.0)
   - UIColor_Hex_Swift (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - AlamofireObjectMapper (~> 5.1.0)
-  - Kingfisher
+  - Kingfisher (~> 4.8.0)
   - ObjectMapper (~> 3.3.0)
+  - PKHUD
   - SnapKit (~> 4.0.0)
-  - UIColor_Hex_Swift
+  - UIColor_Hex_Swift (~> 4.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -22,6 +24,7 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Kingfisher
     - ObjectMapper
+    - PKHUD
     - SnapKit
     - UIColor_Hex_Swift
 
@@ -30,9 +33,10 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 6744a9f7d2d6478c6b3f17d5a4f26a8e831086b5
+PODFILE CHECKSUM: 842213d09f9f7ff205e1993dd66a97e243721d55
 
 COCOAPODS: 1.5.3
