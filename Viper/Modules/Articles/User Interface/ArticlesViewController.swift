@@ -12,14 +12,6 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     // MARK: constants
     let navigationBarTitle = "NAVIGATION_BAR_TITLE"
     let buttonSortTitle = "BUTTON_SORT_TITLE"
-    let alertSortByTitle = "ALERT_SORT_BY_TITLE"
-    let dateString = "ALERT_DATE_OPTION"
-    let titleString = "ALERT_TITLE_OPTION"
-    let authorString = "ALERT_AUTHOR_OPTION"
-    let webSiteString = "ALERT_WEBSITE_OPTION"
-    let cancelString = "ALERT_CANCEL_OPTION"
-    
-    let sortAction = "showSortOptions:"
     
     // MARK: Instance Variables
     var articlesView: ArticlesView!
@@ -45,22 +37,14 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     }
     
     func setupNavigationBar() {
-        let sortButton = UIBarButtonItem(title: self.buttonSortTitle.localized, style: .plain, target:self, action: Selector(self.sortAction))
+        let sortButton = UIBarButtonItem(title: self.buttonSortTitle.localized, style: .plain, target:self, action: #selector(onSortButtonClicked(sender:)))
         
         self.navigationItem.rightBarButtonItem = sortButton
         self.navigationItem.title = self.navigationBarTitle.localized
     }
     
-    func showSortOptions(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: self.alertSortByTitle.localized, message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: self.dateString.localized, style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: self.titleString.localized, style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: self.authorString.localized, style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: self.webSiteString.localized, style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: self.cancelString.localized, style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+    @objc func onSortButtonClicked(sender: UIBarButtonItem) {
+        self.articlesPresenter.sortArticles()
     }
     
     // MARK: ArticlesViewInterface
