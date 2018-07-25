@@ -19,11 +19,17 @@ class DetailsWireframe : NSObject {
     var presentedViewController: UIViewController!
     
     // MARK: Public
+    override init() {
+        super.init()
+        self.detailsPresenter = DetailsPresenter()
+    }
+    
     func presentArticleDetailsInterfaceFromViewController(controller: UIViewController) {
         self.detailsViewController = self.detailsViewControllerFromStoryboard()
         self.detailsViewController.presenter = self.detailsPresenter
         self.detailsPresenter.view = detailsViewController
-
+        self.detailsPresenter.wireframe = self
+        
         controller.navigationController!.pushViewController(detailsViewController, animated: true)
     }
     
