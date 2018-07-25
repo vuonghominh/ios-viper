@@ -8,13 +8,16 @@
 
 import Foundation
 
-class ArticlesPresenter: ArticlesOutput {
+class ArticlesPresenter: ModuleInterface, ArticlesInteractorOutput {
+    // MARK: Instance Variables
     weak var view: ArticlesViewInterface!
     var wireframe: ArticlesWireframe!
     
-    var provider: ArticlesProvider!
+    var interactor: ArticlesInteractorInput!
     
     var articles: [Article]!
+    
+    // MARK: Enums
     
     enum ArticlesSortBy {
         case Date
@@ -23,9 +26,16 @@ class ArticlesPresenter: ArticlesOutput {
         case Website
     }
     
-    // MARK: ArticlesOutput
+    // MARK: ModuleInterface
+    func updateView() {
+        self.interactor.fetchArticles()
+    }
     
-    func receiveArticles(articles: [Article]) {
+    func showDetailsForArticle(article: Article) {
+        self.wireframe.presentDetailsInterfaceForArticle(article: article)
+    }
+    
+    func articlesFetched(articles: [Article]) {
         if articles.count > 0 {
             self.articles = articles
             view.showArticlesList(articles: articles)
@@ -35,11 +45,6 @@ class ArticlesPresenter: ArticlesOutput {
     }
     
     // MARK: Public
-    
-    func requestArticles() {
-        self.provider.downloadArticles()
-    }
-    
     func sortArticles() {
         self.wireframe.presentArticlesSortOptions()
     }

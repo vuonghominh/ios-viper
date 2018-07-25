@@ -10,14 +10,17 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-class ArticlesInteractor: ArticlesProvider {
-    weak var output: ArticlesOutput!
+class ArticlesInteractor: ArticlesInteractorInput {
+    // MARK: Constants
+    let url = "https://www.mocky.io/v2/5b4f433f32000034149c2dea"
     
-    func downloadArticles() {
-        let url = "https://www.mocky.io/v2/5b4f433f32000034149c2dea"
+    // MARK: Instance Variables
+    weak var output: ArticlesInteractorOutput!
+    
+    func fetchArticles() {
         Alamofire.request(url).responseObject {(response: DataResponse<ArticlesResponse>) in
             let articlesResponse = response.result.value
-            self.output.receiveArticles(articles: (articlesResponse?.articles)!)
+            self.output.articlesFetched(articles: (articlesResponse?.articles)!)
         }
     }
 }

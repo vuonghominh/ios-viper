@@ -11,8 +11,7 @@
 		35E4CE6D20FCF3DF005181F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E4CE6B20FCF3DF005181F2 /* LaunchScreen.storyboard */; };
 		35E4CE7820FE3315005181F2 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE7720FE3315005181F2 /* Articles.swift */; };
 		35E4CE7C20FE3C77005181F2 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE7B20FE3C77005181F2 /* ArticlesViewController.swift */; };
-		35E4CE8020FE3FD3005181F2 /* ArticlesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE7F20FE3FD3005181F2 /* ArticlesProvider.swift */; };
-		35E4CE8220FE4133005181F2 /* ArticlesOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8120FE4133005181F2 /* ArticlesOutput.swift */; };
+		35E4CE8020FE3FD3005181F2 /* ModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE7F20FE3FD3005181F2 /* ModuleInterface.swift */; };
 		35E4CE8420FE41B8005181F2 /* ArticlesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */; };
 		35E4CE8620FF7C80005181F2 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */; };
 		35E4CE8C20FF89C0005181F2 /* ArticlesViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */; };
@@ -28,6 +27,8 @@
 		35E4CF0D210779D8005181F2 /* DetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CF0C210779D8005181F2 /* DetailsWireframe.swift */; };
 		35E4CF0F21077A2B005181F2 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CF0E21077A2B005181F2 /* DetailsViewController.swift */; };
 		35E4CF1121077CAB005181F2 /* ArticlesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E4CF1021077CAB005181F2 /* ArticlesStoryboard.storyboard */; };
+		35E4CF7B2108B67F005181F2 /* ArticlesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CF7A2108B67F005181F2 /* ArticlesInteractorInput.swift */; };
+		35E4CF7D2108B6BE005181F2 /* ArticlesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CF7C2108B6BE005181F2 /* ArticlesInteractorOutput.swift */; };
 		E51B18ED5AB599FFFB8D1A87 /* Pods_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6FFD0B8D311FE2896CD39D /* Pods_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +39,7 @@
 		35E4CE6E20FCF3DF005181F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35E4CE7720FE3315005181F2 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		35E4CE7B20FE3C77005181F2 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
-		35E4CE7F20FE3FD3005181F2 /* ArticlesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesProvider.swift; sourceTree = "<group>"; };
-		35E4CE8120FE4133005181F2 /* ArticlesOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesOutput.swift; sourceTree = "<group>"; };
+		35E4CE7F20FE3FD3005181F2 /* ModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleInterface.swift; sourceTree = "<group>"; };
 		35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractor.swift; sourceTree = "<group>"; };
 		35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
 		35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewInterface.swift; sourceTree = "<group>"; };
@@ -55,6 +55,8 @@
 		35E4CF0C210779D8005181F2 /* DetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWireframe.swift; sourceTree = "<group>"; };
 		35E4CF0E21077A2B005181F2 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		35E4CF1021077CAB005181F2 /* ArticlesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticlesStoryboard.storyboard; sourceTree = "<group>"; };
+		35E4CF7A2108B67F005181F2 /* ArticlesInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractorInput.swift; sourceTree = "<group>"; };
+		35E4CF7C2108B6BE005181F2 /* ArticlesInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractorOutput.swift; sourceTree = "<group>"; };
 		6E6FFD0B8D311FE2896CD39D /* Pods_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		883D3DEF4A11A46DD4BD3AA9 /* Pods-Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Viper/Pods-Viper.release.xcconfig"; sourceTree = "<group>"; };
 		8BD92C9CAD9EDF997D762A91 /* Pods-Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Viper/Pods-Viper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,8 +147,9 @@
 		35E4CE8D20FF8B42005181F2 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
-				35E4CE7F20FE3FD3005181F2 /* ArticlesProvider.swift */,
 				35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */,
+				35E4CF7A2108B67F005181F2 /* ArticlesInteractorInput.swift */,
+				35E4CF7C2108B6BE005181F2 /* ArticlesInteractorOutput.swift */,
 			);
 			path = "Application Logic";
 			sourceTree = "<group>";
@@ -155,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */,
-				35E4CE8120FE4133005181F2 /* ArticlesOutput.swift */,
+				35E4CE7F20FE3FD3005181F2 /* ModuleInterface.swift */,
 			);
 			path = "Module Interface";
 			sourceTree = "<group>";
@@ -384,13 +387,14 @@
 				35E4CE9720FF90EC005181F2 /* ArticleTableViewCell.swift in Sources */,
 				35E4CE8C20FF89C0005181F2 /* ArticlesViewInterface.swift in Sources */,
 				35E4CF0D210779D8005181F2 /* DetailsWireframe.swift in Sources */,
-				35E4CE8220FE4133005181F2 /* ArticlesOutput.swift in Sources */,
+				35E4CF7D2108B6BE005181F2 /* ArticlesInteractorOutput.swift in Sources */,
 				35E4CEAF21062F44005181F2 /* String+ Localized.swift in Sources */,
-				35E4CE8020FE3FD3005181F2 /* ArticlesProvider.swift in Sources */,
+				35E4CE8020FE3FD3005181F2 /* ModuleInterface.swift in Sources */,
 				35E4CE9921061B64005181F2 /* ArticlesWireframe.swift in Sources */,
 				35E4CE7820FE3315005181F2 /* Articles.swift in Sources */,
 				35E4CE6320FCF3DE005181F2 /* AppDelegate.swift in Sources */,
 				35E4CF0B210779A7005181F2 /* DetailsPresenter.swift in Sources */,
+				35E4CF7B2108B67F005181F2 /* ArticlesInteractorInput.swift in Sources */,
 				35E4CF0F21077A2B005181F2 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

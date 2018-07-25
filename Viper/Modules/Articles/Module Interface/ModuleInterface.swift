@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol ArticlesProvider: class {
-    func downloadArticles()
+protocol ModuleInterface: class {
+    func updateView()
+    func showDetailsForArticle(article: Article)
 }

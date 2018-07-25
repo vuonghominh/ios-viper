@@ -24,30 +24,38 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.articlesTableView.dataSource = self
-        self.articlesTableView.delegate = self
-        
-        self.setupNavigationBar()
-        
-        self.articlesPresenter.requestArticles()
+        self.setupView()
+        self.articlesPresenter.updateView()
     }
     
     // MARK: Private
+    private func setupView() {
+        self.setupNavigationBar()
+        self.setupTableView()
+    }
+    
     func setupNavigationBar() {
-        let sortButton = UIBarButtonItem(title: self.buttonSortTitle.localized, style: .plain, target:self, action: #selector(onSortButtonClicked(sender:)))
+        let sortButton = UIBarButtonItem(title: self.buttonSortTitle.localized, style: .plain, target:self, action: #selector(ArticlesViewController.onSortButtonClicked(sender:)))
         
         self.navigationItem.rightBarButtonItem = sortButton
         self.navigationItem.title = self.navigationBarTitle.localized
     }
     
-    @objc func onSortButtonClicked(sender: UIBarButtonItem) {
+    private func setupTableView() {
+        self.articlesTableView.dataSource = self
+        self.articlesTableView.delegate = self
+        self.articlesTableView.rowHeight = UITableViewAutomaticDimension
+        self.articlesTableView.estimatedRowHeight = 230.0
+    }
+    
+    @objc private func onSortButtonClicked(sender: UIBarButtonItem) {
         self.articlesPresenter.sortArticles()
     }
     
     // MARK: ArticlesViewInterface
     
     func showNoContentScreen() {
+        // Show custom empty screen.
     }
     
     func showArticlesList(articles: [Article]) {
@@ -83,6 +91,6 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        self.articlesPresenter.presentDetailsScreenForArticle(article: self.articles[indexPath.section])
+        self.articlesPresenter.showDetailsForArticle(article: self.articles[indexPath.section])
     }
 }
