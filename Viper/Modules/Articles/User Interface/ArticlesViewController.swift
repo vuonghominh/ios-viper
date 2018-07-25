@@ -18,7 +18,7 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     @IBOutlet weak var articlesTableView: UITableView!
     
     // MARK: Instance Variables
-    var articlesPresenter: ArticlesPresenter!
+    var articlesPresenter: ArticlesModuleInterface!
     var articles: [Article]!
     
     // MARK: Life Cycle

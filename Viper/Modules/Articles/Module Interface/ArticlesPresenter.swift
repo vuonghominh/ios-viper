@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ArticlesPresenter: ModuleInterface, ArticlesInteractorOutput {
+class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
     // MARK: Instance Variables
-    weak var view: ArticlesViewInterface!
+    var view: ArticlesViewInterface!
     var wireframe: ArticlesWireframe!
     
     var interactor: ArticlesInteractorInput!
@@ -31,6 +31,10 @@ class ArticlesPresenter: ModuleInterface, ArticlesInteractorOutput {
         self.interactor.fetchArticles()
     }
     
+    func sortArticles() {
+        self.wireframe.presentArticlesSortOptions()
+    }
+    
     func showDetailsForArticle(article: Article) {
         self.wireframe.presentDetailsInterfaceForArticle(article: article)
     }
@@ -45,10 +49,6 @@ class ArticlesPresenter: ModuleInterface, ArticlesInteractorOutput {
     }
     
     // MARK: Public
-    func sortArticles() {
-        self.wireframe.presentArticlesSortOptions()
-    }
-    
     func sortArticlesList(sortBy: ArticlesSortBy) {
         switch sortBy {
         case .Date:
