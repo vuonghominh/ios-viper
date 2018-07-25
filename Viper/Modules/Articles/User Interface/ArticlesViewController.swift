@@ -56,8 +56,12 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     }
     
     // MARK: UITableView Datasource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.articles != nil ? self.articles.count : 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -65,16 +69,20 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
         let articleCell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.kArticlesCellIdentifier) as! ArticleTableViewCell
         
         if self.articles != nil {
-            articleCell.setupWithArticle(article: self.articles[indexPath.row])
+            articleCell.setupWithArticle(article: self.articles[indexPath.section])
         }
         
         return articleCell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     // MARK: UITableView Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        self.articlesPresenter.presentDetailsScreenForArticle(article: self.articles[indexPath.row])
+        self.articlesPresenter.presentDetailsScreenForArticle(article: self.articles[indexPath.section])
     }
 }
