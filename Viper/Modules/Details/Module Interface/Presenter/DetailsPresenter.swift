@@ -8,8 +8,14 @@
 
 import Foundation
 
-class DetailsPresenter {
+class DetailsPresenter : DetailsModuleInterface {
     // Instance Variables
+    weak var view: DetailsViewInterface!
     var wireframe: DetailsWireframe!
     var article: Article!
+    
+    // MARK: DetailsModuleInterface
+    func updateView() {
+        self.view.showArticleDetails(article: self.article)
+    }
 }

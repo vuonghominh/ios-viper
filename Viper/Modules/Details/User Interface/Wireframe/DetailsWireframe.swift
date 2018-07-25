@@ -14,13 +14,16 @@ class DetailsWireframe : NSObject {
     let detailsViewControllerIdentifier = "DetailsViewController"
     
     // MARK: Instance Variables
+    weak var detailsViewController: DetailsViewController!
     var detailsPresenter: DetailsPresenter!
     var presentedViewController: UIViewController!
     
     // MARK: Public
     func presentArticleDetailsInterfaceFromViewController(controller: UIViewController) {
-        let detailsViewController = self.detailsViewControllerFromStoryboard()
-        detailsViewController.presenter = self.detailsPresenter
+        self.detailsViewController = self.detailsViewControllerFromStoryboard()
+        self.detailsViewController.presenter = self.detailsPresenter
+        self.detailsPresenter.view = detailsViewController
+
         controller.navigationController!.pushViewController(detailsViewController, animated: true)
     }
     

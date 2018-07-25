@@ -84,7 +84,7 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return section == 0 ? UIView() : nil
+        return UIView()
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

@@ -26,7 +26,7 @@ class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
         case Website
     }
     
-    // MARK: ModuleInterface
+    // MARK: ArticlesModuleInterface
     func updateView() {
         self.interactor.fetchArticles()
     }
@@ -42,9 +42,9 @@ class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
     func articlesFetched(articles: [Article]) {
         if articles.count > 0 {
             self.articles = articles
-            view.showArticlesList(articles: articles)
+            self.view.showArticlesList(articles: articles)
         } else {
-            view.showNoContentScreen()
+            self.view.showNoContentScreen()
         }
     }
     
@@ -52,16 +52,16 @@ class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
     func sortArticlesList(sortBy: ArticlesSortBy) {
         switch sortBy {
         case .Date:
-            view.showArticlesList(articles: self.articles)
+            self.view.showArticlesList(articles: self.articles)
             break
         case .Title:
-            view.showArticlesList(articles: self.articles)
+            self.view.showArticlesList(articles: self.articles)
             break
         case .Author:
-            view.showArticlesList(articles: self.articles)
+            self.view.showArticlesList(articles: self.articles)
             break
         case .Website:
-            view.showArticlesList(articles: self.articles)
+            self.view.showArticlesList(articles: self.articles)
             break
         }
     }

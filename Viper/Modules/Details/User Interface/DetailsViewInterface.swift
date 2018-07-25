@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DetailsViewInterface {
+protocol DetailsViewInterface : class {
     func showArticleDetails(article: Article)
 }
