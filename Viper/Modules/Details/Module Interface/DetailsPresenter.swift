@@ -9,9 +9,7 @@
 import Foundation
 
 class DetailsPresenter {
+    // Instance Variables
     var wireframe: DetailsWireframe!
-    
-    func prepareDetailsInterfaceForPresentation(article: Article) {
-        
-    }
+    var article: Article!
 }

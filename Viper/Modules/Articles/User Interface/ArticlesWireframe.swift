@@ -53,10 +53,15 @@ class ArticlesWireframe: NSObject {
     }
     
     func presentDetailsInterfaceForArticle(article: Article) {
-        self.detailsWireframe.presentArticleDetailsInterfaceFromViewController(controller: self.articlesViewController, article: article)
+        self.detailsWireframe.presentArticleDetailsInterfaceFromViewController(controller: self.articlesViewController)
+        self.sendArticleToDetailsPresenter(detailsPresenter: self.detailsWireframe.detailsPresenter, article: article)
     }
     
     // MARK: Private
+    private func sendArticleToDetailsPresenter(detailsPresenter: DetailsPresenter, article: Article) {
+        detailsPresenter.article = article
+    }
+    
     private func articlesViewControllerFromStoryboard() -> ArticlesViewController {
         let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: self.articlesViewControllerIdentifier) as! ArticlesViewController
