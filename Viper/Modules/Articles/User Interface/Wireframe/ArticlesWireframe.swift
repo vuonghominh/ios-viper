@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticlesWireframe: NSObject {
+class ArticlesWireframe: NSObject, ArticlesWireframeInput {
     // MARK: Constants
     
     let alertSortByTitle = "ALERT_SORT_BY_TITLE"
