@@ -16,8 +16,6 @@
 		35E4CE8420FE41B8005181F2 /* ArticlesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */; };
 		35E4CE8620FF7C80005181F2 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */; };
 		35E4CE8C20FF89C0005181F2 /* ArticlesViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */; };
-		35E4CE9320FF8F79005181F2 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9220FF8F79005181F2 /* UIFont+Custom.swift */; };
-		35E4CE9520FF8FB0005181F2 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9420FF8FB0005181F2 /* UIColor+Custom.swift */; };
 		35E4CE9720FF90EC005181F2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9620FF90EC005181F2 /* ArticleTableViewCell.swift */; };
 		35E4CE9921061B64005181F2 /* ArticlesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9821061B64005181F2 /* ArticlesWireframe.swift */; };
 		35E4CE9E21061C1F005181F2 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E4CE9D21061C1F005181F2 /* RootWireframe.swift */; };
@@ -45,8 +43,6 @@
 		35E4CE8320FE41B8005181F2 /* ArticlesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractor.swift; sourceTree = "<group>"; };
 		35E4CE8520FF7C80005181F2 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
 		35E4CE8B20FF89C0005181F2 /* ArticlesViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewInterface.swift; sourceTree = "<group>"; };
-		35E4CE9220FF8F79005181F2 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
-		35E4CE9420FF8FB0005181F2 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		35E4CE9620FF90EC005181F2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		35E4CE9821061B64005181F2 /* ArticlesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesWireframe.swift; sourceTree = "<group>"; };
 		35E4CE9D21061C1F005181F2 /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
@@ -187,8 +183,6 @@
 		35E4CE9120FF8F57005181F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				35E4CE9220FF8F79005181F2 /* UIFont+Custom.swift */,
-				35E4CE9420FF8FB0005181F2 /* UIColor+Custom.swift */,
 				35E4CEAE21062F44005181F2 /* String+ Localized.swift */,
 			);
 			path = Extensions;
@@ -343,9 +337,6 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -353,9 +344,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,10 +380,8 @@
 				35E4CE9E21061C1F005181F2 /* RootWireframe.swift in Sources */,
 				35E4CEA021061E17005181F2 /* AppDependencies.swift in Sources */,
 				35E4CE7C20FE3C77005181F2 /* ArticlesViewController.swift in Sources */,
-				35E4CE9520FF8FB0005181F2 /* UIColor+Custom.swift in Sources */,
 				35E4CF0821077971005181F2 /* DetailsViewInterface.swift in Sources */,
 				35E4CE9720FF90EC005181F2 /* ArticleTableViewCell.swift in Sources */,
-				35E4CE9320FF8F79005181F2 /* UIFont+Custom.swift in Sources */,
 				35E4CE8C20FF89C0005181F2 /* ArticlesViewInterface.swift in Sources */,
 				35E4CF0D210779D8005181F2 /* DetailsWireframe.swift in Sources */,
 				35E4CE8220FE4133005181F2 /* ArticlesOutput.swift in Sources */,
