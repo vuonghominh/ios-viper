@@ -18,14 +18,14 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     @IBOutlet weak var articlesTableView: UITableView!
     
     // MARK: Instance Variables
-    var articlesPresenter: ArticlesModuleInterface!
+    var presenter: ArticlesModuleInterface!
     var articles: [Article]!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.articlesPresenter.updateView()
+        self.presenter.updateView()
     }
     
     // MARK: Private
@@ -49,7 +49,7 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     }
     
     @objc private func onSortButtonClicked(sender: UIBarButtonItem) {
-        self.articlesPresenter.sortArticles()
+        self.presenter.sortArticles()
     }
     
     // MARK: ArticlesViewInterface
@@ -95,6 +95,6 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        self.articlesPresenter.showDetailsForArticle(article: self.articles[indexPath.section])
+        self.presenter.showDetailsForArticle(article: self.articles[indexPath.section])
     }
 }

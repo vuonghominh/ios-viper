@@ -9,11 +9,16 @@
 import UIKit
 
 class DetailsWireframe : NSObject {
-    var article: Article!
+    // MARK: Instance Variables
     var detailsPresenter: DetailsPresenter!
     var presentedViewController: UIViewController!
     
-    func presentDetailsInterfaceFromViewController(controller: UIViewController) {
+    func presentArticleDetailsInterfaceFromViewController(controller: UIViewController, article: Article) {
+        let detailsViewController = DetailsViewController()
+        detailsViewController.presenter = self.detailsPresenter
         
+        self.detailsPresenter.prepareDetailsInterfaceForPresentation(article: article)
+        
+        controller.navigationController!.pushViewController(detailsViewController, animated: true)
     }
 }

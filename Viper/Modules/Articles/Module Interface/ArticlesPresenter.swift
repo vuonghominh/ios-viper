@@ -10,7 +10,7 @@ import Foundation
 
 class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
     // MARK: Instance Variables
-    var view: ArticlesViewInterface!
+    weak var view: ArticlesViewInterface!
     var wireframe: ArticlesWireframe!
     
     var interactor: ArticlesInteractorInput!

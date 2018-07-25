@@ -23,8 +23,8 @@ class ArticlesWireframe: NSObject {
     
     // MARK: Instance Variables
     
+    weak var articlesViewController: ArticlesViewController!
     var articlesPresenter: ArticlesPresenter!
-    var articlesViewController: ArticlesViewController!
     var rootWireframe: RootWireframe!
     var detailsWireframe: DetailsWireframe!
     
@@ -32,7 +32,7 @@ class ArticlesWireframe: NSObject {
     
     func presentArticlesInterfaceFromWindow(window: UIWindow) {
         self.articlesViewController = self.articlesViewControllerFromStoryboard()
-        self.articlesViewController.articlesPresenter = self.articlesPresenter
+        self.articlesViewController.presenter = self.articlesPresenter
         self.articlesPresenter.view = self.articlesViewController
         self.rootWireframe.showRootViewControllerInWindow(viewController: self.articlesViewController, window: window)
     }
@@ -53,12 +53,11 @@ class ArticlesWireframe: NSObject {
     }
     
     func presentDetailsInterfaceForArticle(article: Article) {
-        self.detailsWireframe.article = article
-        self.detailsWireframe.presentDetailsInterfaceFromViewController(controller: self.articlesViewController)
+        self.detailsWireframe.presentArticleDetailsInterfaceFromViewController(controller: self.articlesViewController, article: article)
     }
     
     // MARK: Private
-    func articlesViewControllerFromStoryboard() -> ArticlesViewController {
+    private func articlesViewControllerFromStoryboard() -> ArticlesViewController {
         let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: self.articlesViewControllerIdentifier) as! ArticlesViewController
         return viewController
