@@ -6,13 +6,19 @@ PODS:
   - Kingfisher (4.8.0)
   - ObjectMapper (3.3.0)
   - PKHUD (5.1.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - RxSwift (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - AlamofireObjectMapper (~> 5.1.0)
   - Kingfisher (~> 4.8.0)
   - ObjectMapper (~> 3.3.0)
-  - PKHUD
+  - PKHUD (~> 5.1.0)
+  - R.swift
+  - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,6 +27,9 @@ SPEC REPOS:
     - Kingfisher
     - ObjectMapper
     - PKHUD
+    - R.swift
+    - R.swift.Library
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -28,7 +37,10 @@ SPEC CHECKSUMS:
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: daae62a50d9431ed421a475e7e4b4eae9feca8e1
+PODFILE CHECKSUM: 7c409f1e5afb1a08a7dcc39da620689c80565d79
 
 COCOAPODS: 1.5.3

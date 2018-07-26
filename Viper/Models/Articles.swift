@@ -10,12 +10,11 @@ import Foundation
 import ObjectMapper
 
 struct Article {
-    var title: String?
-    var website: String?
-    var authors: String?
-    var content: String?
-    var imageUrl: String?
-    var date: Date?
+    var title = ""
+    var website = ""
+    var authors = ""
+    var content = ""
+    var imageUrl = ""
 }
 
 extension Article: Mappable {
@@ -28,7 +27,6 @@ extension Article: Mappable {
         authors     <- map["authors"]
         content     <- map["content"]
         imageUrl    <- map["image"]
-        date        <- (map["date"], DateTransform())
     }
 }
 

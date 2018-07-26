@@ -15,9 +15,8 @@ class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let appDependencies = AppDependencies()
-        appDependencies.installRootViewControllerIntoWindow(window!)
-        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        RootRouter().presentArticlesScreen(in: window!)
         return true
     }
 }
