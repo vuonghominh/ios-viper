@@ -68,14 +68,14 @@ class ArticlesWireframe: ArticlesWireframeInput {
         articlesViewController.present(alert, animated: true, completion: nil)
     }
     
-    func presentDetailsInterfaceForArticle(_ article: [String: Any]) {
+    func presentDetailsInterfaceForArticle(_ article: Article) {
         detailsWireframe = DetailsWireframe()
         sendArticleToDetailsPresenter(detailsWireframe.detailsPresenter, article: article)
         detailsWireframe.presentArticleDetailsInterfaceFromViewController(articlesViewController)
     }
     
     // MARK: Private
-    private func sendArticleToDetailsPresenter(_ detailsPresenter: DetailsPresenter, article: [String: Any]) {
+    private func sendArticleToDetailsPresenter(_ detailsPresenter: DetailsPresenter, article: Article) {
         detailsPresenter.article = article
     }
     

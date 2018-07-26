@@ -15,7 +15,7 @@ class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
     
     var interactor: ArticlesInteractorInput!
     
-    var articles: [[String: Any]]!
+    var articles: [Article]!
     
     // MARK: Enums
     
@@ -35,12 +35,12 @@ class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
         wireframe.presentArticlesSortOptions()
     }
     
-    func showDetails(forArticle article: [String: Any]) {
+    func showDetails(forArticle article: Article) {
         wireframe.presentDetailsInterfaceForArticle(article)
     }
     
     // MARK: ArticlesInteractorOutput
-    func articlesFetched(_ articles: [[String: Any]]) {
+    func articlesFetched(_ articles: [Article]) {
         if articles.count > 0 {
             self.articles = articles
             view.showArticlesList(articles)

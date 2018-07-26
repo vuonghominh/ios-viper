@@ -31,13 +31,13 @@ class DetailsViewController : UIViewController, DetailsViewInterface {
     }
     
     // MARK: DetailsViewInterface
-    func showArticleDetails(_ article: [String: Any]) {
-        if let image = article["image"] as? String {
+    func showArticleDetails(_ article: Article) {
+        if let image = article.imageUrl {
             articleImageView.kf.setImage(with: URL(string: image)!, placeholder: nil)
         } else {
             articleImageView.image = UIImage(named: kImagePlaceHolder)
         }
-        authorsLabel.text = article["authors"] as? String
-        titleLabel.text = article["title"] as? String
+        authorsLabel.text = article.authors
+        titleLabel.text = article.title
     }
 }

@@ -25,10 +25,10 @@ class ArticleTableViewCell : UITableViewCell {
     }
 
     // MARK: Public
-    func setupWithArticle(_ article: [String: Any]) {
-        authorLabel?.text = article["authors"] as? String
-        titleLabel?.text = article["title"] as? String
-        if let image = article["image"] as? String {
+    func setupWithArticle(_ article: Article) {
+        authorLabel?.text = article.authors
+        titleLabel?.text = article.title
+        if let image = article.imageUrl {
             articleImageView.kf.setImage(with: URL(string: image)!, placeholder: nil)
         } else {
             articleImageView.image = UIImage(named: kImagePlaceHolder)

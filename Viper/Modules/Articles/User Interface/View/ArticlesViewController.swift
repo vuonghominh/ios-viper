@@ -20,7 +20,7 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
     
     // MARK: Instance Variables
     var presenter: ArticlesModuleInterface!
-    var articles: [[String: Any]]!
+    var articles: [Article]!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class ArticlesViewController: UIViewController, ArticlesViewInterface {
         // Show custom empty screen.
     }
     
-    func showArticlesList(_ articles: [[String: Any]]) {
+    func showArticlesList(_ articles: [Article]) {
         HUD.hide()
         self.articles = articles
         articlesTableView.reloadData()

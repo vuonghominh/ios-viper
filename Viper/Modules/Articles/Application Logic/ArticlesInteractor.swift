@@ -20,10 +20,7 @@ class ArticlesInteractor: ArticlesInteractorInput {
     func fetchArticles() {
         Alamofire.request(url, method: .get).responseObject {(response: DataResponse<ArticlesResponse>) in
             guard let articlesResponse = response.result.value else { return }
-            let dictionaries = articlesResponse.articles.map({ (article) -> [[String: Any]] in
-                return article.toJSON()
-            })
-            self.output.articlesFetched(dictionaries!)
+            self.output.articlesFetched(articlesResponse.articles!)
         }
     }
 }
