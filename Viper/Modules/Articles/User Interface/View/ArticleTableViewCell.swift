@@ -25,13 +25,13 @@ class ArticleTableViewCell : UITableViewCell {
     }
 
     // MARK: Public
-    func setupWithArticle(article: Article) {
-        self.authorLabel?.text = article.authors!
-        self.titleLabel?.text = article.title!
-        if (article.imageUrl != nil) {
-            self.articleImageView.kf.setImage(with: URL(string: article.imageUrl!), placeholder: nil)
+    func setupWithArticle(_ article: [String: Any]) {
+        authorLabel?.text = article["authors"] as? String
+        titleLabel?.text = article["title"] as? String
+        if let image = article["image"] as? String {
+            articleImageView.kf.setImage(with: URL(string: image)!, placeholder: nil)
         } else {
-            self.articleImageView.image = UIImage(named: self.kImagePlaceHolder)
+            articleImageView.image = UIImage(named: kImagePlaceHolder)
         }
     }
 }

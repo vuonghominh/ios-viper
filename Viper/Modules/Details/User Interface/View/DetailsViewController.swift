@@ -26,23 +26,18 @@ class DetailsViewController : UIViewController, DetailsViewInterface {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.updateView()
-        self.navigationController!.title = self.kNavigationTitle.localized
+        presenter.updateView()
+        navigationController!.title = kNavigationTitle.localized()
     }
     
     // MARK: DetailsViewInterface
-    func showArticleDetails(article: Article) {
-        self.setupArticleImage(article: article)
-        self.authorsLabel.text = article.authors
-        self.titleLabel.text = article.title
-    }
-    
-    // MARK: Private
-    func setupArticleImage(article: Article) {
-        if (article.imageUrl != nil) {
-            self.articleImageView.kf.setImage(with: URL(string: article.imageUrl!), placeholder: nil)
+    func showArticleDetails(_ article: [String: Any]) {
+        if let image = article["image"] as? String {
+            articleImageView.kf.setImage(with: URL(string: image)!, placeholder: nil)
         } else {
-            self.articleImageView.image = UIImage(named: self.kImagePlaceHolder)
+            articleImageView.image = UIImage(named: kImagePlaceHolder)
         }
+        authorsLabel.text = article["authors"] as? String
+        titleLabel.text = article["title"] as? String
     }
 }

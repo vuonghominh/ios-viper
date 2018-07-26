@@ -15,58 +15,55 @@ class ArticlesPresenter: ArticlesModuleInterface, ArticlesInteractorOutput {
     
     var interactor: ArticlesInteractorInput!
     
-    var articles: [Article]!
+    var articles: [[String: Any]]!
     
     // MARK: Enums
     
     enum ArticlesSortBy {
-        case Date
-        case Title
-        case Author
-        case Website
+        case date
+        case title
+        case author
+        case website
     }
     
     // MARK: ArticlesModuleInterface
     func updateView() {
-        self.interactor.fetchArticles()
+        interactor.fetchArticles()
     }
     
     func sortArticles() {
-        self.wireframe.presentArticlesSortOptions()
+        wireframe.presentArticlesSortOptions()
     }
     
-    func showDetailsForArticle(article: Article) {
-        self.wireframe.presentDetailsInterfaceForArticle(article: article)
+    func showDetails(forArticle article: [String: Any]) {
+        wireframe.presentDetailsInterfaceForArticle(article)
     }
     
-    func articlesFetched(articles: [Article]) {
+    // MARK: ArticlesInteractorOutput
+    func articlesFetched(_ articles: [[String: Any]]) {
         if articles.count > 0 {
             self.articles = articles
-            self.view.showArticlesList(articles: articles)
+            view.showArticlesList(articles)
         } else {
-            self.view.showNoContentScreen()
+            view.showNoContentScreen()
         }
     }
     
     // MARK: Public
     func sortArticlesList(sortBy: ArticlesSortBy) {
         switch sortBy {
-        case .Date:
-            self.view.showArticlesList(articles: self.articles)
+        case .date:
+            self.view.showArticlesList(self.articles)
             break
-        case .Title:
-            self.view.showArticlesList(articles: self.articles)
+        case .title:
+            self.view.showArticlesList(self.articles)
             break
-        case .Author:
-            self.view.showArticlesList(articles: self.articles)
+        case .author:
+            self.view.showArticlesList(self.articles)
             break
-        case .Website:
-            self.view.showArticlesList(articles: self.articles)
+        case .website:
+            self.view.showArticlesList(self.articles)
             break
         }
-    }
-    
-    func presentDetailsScreenForArticle(article: Article) {
-        self.wireframe.presentDetailsInterfaceForArticle(article: article)
     }
 }

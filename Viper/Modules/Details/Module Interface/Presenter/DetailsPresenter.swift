@@ -12,10 +12,10 @@ class DetailsPresenter : DetailsModuleInterface {
     // Instance Variables
     weak var view: DetailsViewInterface!
     var wireframe: DetailsWireframe!
-    var article: Article!
+    var article: [String: Any]!
     
     // MARK: DetailsModuleInterface
     func updateView() {
-        self.view.showArticleDetails(article: self.article)
+        view.showArticleDetails(article)
     }
 }

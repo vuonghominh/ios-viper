@@ -10,4 +10,5 @@ target 'Viper' do
   pod 'Alamofire', '~> 4.7.3'
   pod 'AlamofireObjectMapper', '~> 5.1.0'
   pod 'Kingfisher', '~> 4.8.0'
+  pod 'PKHUD', '~> 5.1.0'
 end

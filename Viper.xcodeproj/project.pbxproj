@@ -232,7 +232,6 @@
 			children = (
 				35E4CF8A2108C9CE005181F2 /* Wireframe */,
 				35E4CF872108C908005181F2 /* View */,
-				35E4CF0721077971005181F2 /* DetailsViewInterface.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -294,6 +293,7 @@
 		35E4CF872108C908005181F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				35E4CF0721077971005181F2 /* DetailsViewInterface.swift */,
 				35E4CF882108C91D005181F2 /* DetailsViewController.swift */,
 			);
 			path = View;
@@ -406,6 +406,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -413,6 +414,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

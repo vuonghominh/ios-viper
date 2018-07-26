@@ -11,5 +11,5 @@ import Foundation
 protocol ArticlesModuleInterface: class {
     func updateView()
     func sortArticles()
-    func showDetailsForArticle(article: Article)
+    func showDetails(forArticle article: [String: Any])
 }

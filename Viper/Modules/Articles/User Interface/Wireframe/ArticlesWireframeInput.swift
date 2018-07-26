@@ -10,5 +10,5 @@ import Foundation
 
 protocol ArticlesWireframeInput {
     func presentArticlesSortOptions()
-    func presentDetailsInterfaceForArticle(article: Article)
+    func presentDetailsInterfaceForArticle(_ article: [String: Any])
 }

@@ -18,9 +18,12 @@ class ArticlesInteractor: ArticlesInteractorInput {
     weak var output: ArticlesInteractorOutput!
     
     func fetchArticles() {
-        Alamofire.request(url).responseObject {(response: DataResponse<ArticlesResponse>) in
-            let articlesResponse = response.result.value
-            self.output.articlesFetched(articles: (articlesResponse?.articles)!)
+        Alamofire.request(url, method: .get).responseObject {(response: DataResponse<ArticlesResponse>) in
+            guard let articlesResponse = response.result.value else { return }
+            let dictionaries = articlesResponse.articles.map({ (article) -> [[String: Any]] in
+                return article.toJSON()
+            })
+            self.output.articlesFetched(dictionaries!)
         }
     }
 }

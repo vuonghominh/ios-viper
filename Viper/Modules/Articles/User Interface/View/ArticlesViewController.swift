@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PKHUD
 
-class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableViewDataSource, UITableViewDelegate {
+class ArticlesViewController: UIViewController, ArticlesViewInterface {
     // MARK: constants
     let navigationBarTitle = "NAVIGATION_BAR_TITLE"
     let buttonSortTitle = "BUTTON_SORT_TITLE"
@@ -19,37 +20,41 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     // MARK: Instance Variables
     var presenter: ArticlesModuleInterface!
-    var articles: [Article]!
+    var articles: [[String: Any]]!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupView()
-        self.presenter.updateView()
+        setupView()
+        presenter.updateView()
+        HUD.show(.progress)
     }
     
     // MARK: Private
     private func setupView() {
-        self.setupNavigationBar()
-        self.setupTableView()
+        setupNavigationBar()
+        setupTableView()
     }
     
-    func setupNavigationBar() {
-        let sortButton = UIBarButtonItem(title: self.buttonSortTitle.localized, style: .plain, target:self, action: #selector(ArticlesViewController.onSortButtonClicked(sender:)))
+    private func setupNavigationBar() {
+        let sortButton = UIBarButtonItem(title: buttonSortTitle.localized(),
+                                         style: .plain,
+                                         target:self,
+                                         action: #selector(ArticlesViewController.onSortButtonClicked))
         
-        self.navigationItem.rightBarButtonItem = sortButton
-        self.navigationItem.title = self.navigationBarTitle.localized
+        navigationItem.rightBarButtonItem = sortButton
+        navigationItem.title = navigationBarTitle.localized()
     }
     
     private func setupTableView() {
-        self.articlesTableView.dataSource = self
-        self.articlesTableView.delegate = self
-        self.articlesTableView.rowHeight = UITableViewAutomaticDimension
-        self.articlesTableView.estimatedRowHeight = 230.0
+        articlesTableView.dataSource = self
+        articlesTableView.delegate = self
+        articlesTableView.rowHeight = UITableViewAutomaticDimension
+        articlesTableView.estimatedRowHeight = 230.0
     }
     
-    @objc private func onSortButtonClicked(sender: UIBarButtonItem) {
-        self.presenter.sortArticles()
+    @objc private func onSortButtonClicked(_ sender: Any?) {
+        presenter.sortArticles()
     }
     
     // MARK: ArticlesViewInterface
@@ -58,14 +63,17 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
         // Show custom empty screen.
     }
     
-    func showArticlesList(articles: [Article]) {
+    func showArticlesList(_ articles: [[String: Any]]) {
+        HUD.hide()
         self.articles = articles
-        self.articlesTableView.reloadData()
+        articlesTableView.reloadData()
     }
-    
+}
+
+extension ArticlesViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: UITableView Datasource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.articles != nil ? self.articles.count : 0
+        return articles != nil ? articles.count : 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,8 +84,8 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     {
         let articleCell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.kArticlesCellIdentifier) as! ArticleTableViewCell
         
-        if self.articles != nil {
-            articleCell.setupWithArticle(article: self.articles[indexPath.section])
+        if articles != nil {
+            articleCell.setupWithArticle(articles[indexPath.section])
         }
         
         return articleCell
@@ -95,6 +103,6 @@ class ArticlesViewController : UIViewController, ArticlesViewInterface, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        self.presenter.showDetailsForArticle(article: self.articles[indexPath.section])
+        self.presenter.showDetails(forArticle: self.articles[indexPath.section])
     }
 }

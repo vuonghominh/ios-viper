@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DetailsViewInterface : class {
-    func showArticleDetails(article: Article)
+protocol DetailsViewInterface: class {
+    func showArticleDetails(_ article: [String: Any])
 }
