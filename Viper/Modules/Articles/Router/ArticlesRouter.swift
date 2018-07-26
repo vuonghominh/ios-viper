@@ -17,8 +17,7 @@ class ArticlesRouter: ArticlesWireframe {
         let interactor = ArticlesInteractor()
         let router = ArticlesRouter()
         
-        let navigation = R.storyboard.articlesStoryboard.articlesNavigationViewController()
-        navigation?.viewControllers = [view!]
+        let navigation = UINavigationController(rootViewController: view!)
         
         view?.presenter = presenter
         
@@ -30,7 +29,7 @@ class ArticlesRouter: ArticlesWireframe {
         
         router.viewController = view
         
-        return navigation!
+        return navigation
     }
     
     func presentSortOptions(sortCompletion: ((ArticlesSortType) -> ())?) {

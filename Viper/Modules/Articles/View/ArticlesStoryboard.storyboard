@@ -35,18 +35,5 @@
             </objects>
             <point key="canvasLocation" x="-1140" y="1029.5352323838081"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="snF-9B-iiT">
-            <objects>
-                <navigationController storyboardIdentifier="articlesNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Pnw-fz-lpe" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yck-ho-Kdg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P99-Gh-p6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-388" y="1030"/>
-        </scene>
     </scenes>
 </document>
